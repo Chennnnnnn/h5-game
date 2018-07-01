@@ -1,0 +1,97 @@
+#clouds {
+    position: fixed;
+    top: 10vh;
+    height: 50vw;
+    width: 100vw;
+}
+
+/* 云漂浮的动画 */
+
+@keyframes animateCloud1 {
+    from {
+        margin-left: -40vw;
+    }
+    to {
+        margin-left: 100vw;
+    }
+}
+@-webkit-keyframes animateCloud1{
+    from {
+        margin-left: -40vw;
+    }
+    to {
+        margin-left: 100vw;
+    }
+}
+@keyframes animateCloud2 {
+    from {
+        margin-left: -80vw;
+    }
+    to {
+        margin-left: 100vw;
+    }
+}
+@-webkit-keyframes animateCloud2{
+    from {
+        margin-left: -80vw;
+    }
+    to {
+        margin-left: 100vw;
+    }
+}
+.cloud {
+    width: 25vw;
+    height: 10vw;
+    background: white;
+    border-radius: 5vw;
+}
+.cloud::after,
+.cloud::before{
+    background: white;
+    content: '';
+    position: absolute;
+}
+.cloud::before{
+    border-radius: 10vw;
+    height: 10vw;
+    width: 10vw;
+    left: 5vw;
+    top: -4vw;
+}
+.cloud::after{
+    border-radius: 10vw;
+    height: 10vw;
+    width: 10vw;
+    left: 10vw;
+    top: -6vw;
+}
+.contain1{
+    -webkit-animation: animateCloud1 36s linear infinite;
+            animation: animateCloud1 36s linear infinite; /*缩小*/
+    -webkit-transform: scale(0.7);
+            transform: scale(0.7) /*放大*/
+}
+.contain2{
+    -webkit-animation: animateCloud2 46s linear infinite;
+            animation: animateCloud2 46s linear infinite; /*缩小*/
+    -webkit-transform: scale(1);
+            transform: scale(1) /*放大*/
+}
+.contain3{
+    -webkit-animation: animateCloud1 42s linear infinite;
+            animation: animateCloud1 42s linear infinite; /*缩小*/
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9) /*放大*/
+}
+.contain4{
+    -webkit-animation: animateCloud2 32s linear infinite;
+            animation: animateCloud2 32s linear infinite; /*缩小*/
+    -webkit-transform: scale(0.6);
+            transform: scale(0.6) /*放大*/
+}
+.contain5{
+    -webkit-animation: animateCloud1 38s linear infinite;
+            animation: animateCloud1 38s linear infinite; /*缩小*/
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8) /*放大*/
+}
