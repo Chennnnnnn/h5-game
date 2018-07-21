@@ -9,35 +9,37 @@
 
 @keyframes animateCloud1 {
     from {
-        margin-left: -40vw;
+        transform: translateX(-40vw);
+/* margin-left: -40vw; */
     }
     to {
-        margin-left: 100vw;
+        transform: translateX(100vw);
+        /* margin-left: 100vw; */
     }
 }
 @-webkit-keyframes animateCloud1{
     from {
-        margin-left: -40vw;
+        transform: translateX(-40vw);
     }
     to {
-        margin-left: 100vw;
+        transform: translateX(100vw);
     }
 }
 @keyframes animateCloud2 {
     from {
-        margin-left: -80vw;
+        transform: translateX(-80vw);
     }
     to {
-        margin-left: 100vw;
+        transform: translateX(100vw);
     }
 }
 @-webkit-keyframes animateCloud2{
     from {
-        margin-left: -80vw;
+        transform: translateX(-80vw);
     }
     to {
-        margin-left: 100vw;
-    }
+        transform: translateX(100vw);   
+ }
 }
 .cloud {
     width: 25vw;
@@ -66,6 +68,11 @@
     top: -6vw;
 }
 .contain1{
+    /* -webkit-transform: translateZ(0);
+   -moz-transform: translateZ(0);
+   -ms-transform: translateZ(0);
+   -o-transform: translateZ(0);
+   transform: translateZ(0); */
     -webkit-animation: animateCloud1 36s linear infinite;
             animation: animateCloud1 36s linear infinite; /*缩小*/
     -webkit-transform: scale(0.7);
@@ -79,19 +86,19 @@
 }
 .contain3{
     -webkit-animation: animateCloud1 42s linear infinite;
-            animation: animateCloud1 42s linear infinite; /*缩小*/
+            animation: animateCloud1 42s linear infinite; 
     -webkit-transform: scale(0.9);
-            transform: scale(0.9) /*放大*/
+            transform: scale(0.9) 
 }
 .contain4{
     -webkit-animation: animateCloud2 32s linear infinite;
-            animation: animateCloud2 32s linear infinite; /*缩小*/
+            animation: animateCloud2 32s linear infinite; 
     -webkit-transform: scale(0.6);
-            transform: scale(0.6) /*放大*/
+            transform: scale(0.6) 
 }
 .contain5{
     -webkit-animation: animateCloud1 38s linear infinite;
-            animation: animateCloud1 38s linear infinite; /*缩小*/
+            animation: animateCloud1 38s linear infinite; 
     -webkit-transform: scale(0.8);
-            transform: scale(0.8) /*放大*/
+            transform: scale(0.8)
 }

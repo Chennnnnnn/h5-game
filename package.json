@@ -11,6 +11,6 @@
   "dependencies": {
     "parcel": "^1.8.1",
     "parcel-bundler": "^1.8.1",
-    "postcss-px-to-viewport": "0.0.3"
+    "postcss-px-to-viewport": "0.0.3",
   }
 }

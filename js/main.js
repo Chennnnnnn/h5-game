@@ -16,6 +16,7 @@ let time = 30;
 let appleCount = 0;
 // 设置分值
 let success = 28 * 3;
+let state = true;
 
 
 // 生成苹果并加入到dom中，然后增加style.margintop
@@ -47,17 +48,19 @@ const dropFruit = (fruitObj) => {
 
 //整体水果下降,产生新水果，回收水果
 const dropAll = () => {
-    let now = Date.now();
-    let deltaTime = now - lastTime;
-    if (deltaTime > 800) {
-        product('apple');
-        lastTime = now;
-    }
-    requestAnimFrame(dropAll);
-    fruits.map((fruitObj) => {
-        fruitObj.y < 75 ? dropFruit(fruitObj) : recycle(fruitObj);
+    if(state) {
+        let now = Date.now();
+        let deltaTime = now - lastTime;
+        if (deltaTime > 800) {
+            product('apple');
+            lastTime = now;
+        } 
+        requestAnimFrame(dropAll);
+        fruits.map((fruitObj) => {
+            fruitObj.y < 75 ? dropFruit(fruitObj) : recycle(fruitObj);
 
-    })
+        })
+    }
     // 判断是否与篮子的x位置相同，有则计分
 }
 
@@ -115,9 +118,12 @@ const startGame = () => {
             time--;
             document.getElementById('time').childNodes[0].innerText = time;
         } else {
+            state = false;
             clearInterval(timer);
+            const resultNode = document.getElementById('result')
+            resultNode.innerHTML = `<h1>${getResult()}</h1>`;
+            resultNode.style.top = 0;
         }  
-        // console.log('定时器')
     },1000)
     dropAll();
 }
@@ -128,12 +134,22 @@ document.getElementById('start').addEventListener('click',function(e){
     startGame();
 })
 
-// 添加游戏规则
+
+// 判断结果
+const getResult = () => {
+    if(grade.number < success){
+        return '恭喜你，挑战成功\(^o^)/~'
+    } else {
+        return '非常遗憾挑战失败'
+    }
+}
+
+// 更改生成apple的方式，回收利用
 // 使用感应API
-//设置时间
+// 设置时间
 // 添加香蕉
 //优化css布局
 //待完善，调整下降速度
-// 时钟效果
 // 音乐图标旋转
 // fastclick
+
