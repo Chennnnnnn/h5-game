@@ -20,7 +20,8 @@ export default class apple {
     }
     setY(y) {
         this.y = y;
-        this.node.style.top = y + 'vh';
+        // this.node.style.transform = 'translateY('+y+'vh)';
+        this.node.style.transform = 'translate3d(0,'+ y + 'vh,0)';
     }
 }
 

@@ -137,7 +137,7 @@ document.getElementById('start').addEventListener('click',function(e){
 
 // 判断结果
 const getResult = () => {
-    if(grade.number < success){
+    if(grade.number > success){
         return '恭喜你，挑战成功\(^o^)/~'
     } else {
         return '非常遗憾挑战失败'
